@@ -16,8 +16,8 @@ while(true)
     
     Math.rand2(1,8) => length;
     Math.rand2(1,8/length) => repeats;
-    Math.rand2(0,31)*beat_i => measure_pos;
-    <<<measure_pos/beat_i>>>;
+    Math.rand2(0,32-length)*beat_i => measure_pos;
+    <<<measure_pos>>>;
     for(0=>int i;i<repeats;i++)
     {
         Math.floor(slider.value()) $ int=> max_subdiv;
@@ -25,6 +25,7 @@ while(true)
         for(0=>int j;j<subdiv;j++)
         {
             measure_pos => buf.pos;
+            Math.rand2f(.8,1.)=>buf.rate;
             beat_d*length/subdiv => now;
         }
     }
